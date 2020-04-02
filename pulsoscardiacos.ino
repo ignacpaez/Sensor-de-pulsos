@@ -21,7 +21,7 @@ void loop() {
  pulso = analogRead(A0);  // Lee el valor del pin analógico 0, y Asigna este valor a la variable "pulso".                       
 Serial.print("*");//Este caracter lo filtra la aplicación en APP inventor
 Serial.println(pulso);// Envíe el valor de pulso al Plotter serial. Comentar si queremos visualizar en "serial ploter"
-   if(pulso > limite){                          // Si la señal es superior a "550", entonces suena el buzzer.
+   if(pulso > limite){                          // Si la señal es superior a "550", entonces suena el buzzer y se enciende led1
      digitalWrite(buzzer,HIGH);
      digitalWrite(led1,HIGH);
      digitalWrite(led2,LOW);
@@ -29,7 +29,7 @@ Serial.println(pulso);// Envíe el valor de pulso al Plotter serial. Comentar si
    } else {
     digitalWrite(led2,HIGH);
     digitalWrite(led1,LOW);
-     digitalWrite(buzzer,LOW);                //  De lo contrario, deja de sonar el buzzer.
+     digitalWrite(buzzer,LOW);                //  De lo contrario, deja de sonar el buzzer y led2
    }
 delay(50);
 }
